@@ -3,7 +3,7 @@ import sys
 
 def main():
 
-    def print_style(text, delay=0.01):
+    def print_style(text, delay=0.05):
         for c in text:
             sys.stdout.write(c)
             sys.stdout.flush()
@@ -23,8 +23,8 @@ def main():
         for text in lines:
             print_style(text + " ")
 
-        time.sleep(2)
-        start = input("\nAre you ready to experience the fun? Y or N\n>>").upper()
+        time.sleep(1)
+        start = input("\nAre you ready to experience the fun? Y or N\n>> ").upper()
         if start.__contains__("Y") or start.__contains__("N"):
             if start == "N":
                 punked_out = input("\nIt's okay to admit you can't handle it..\nAre you REALLY sure?\nY or N\n>> ").upper()
@@ -32,10 +32,10 @@ def main():
                     print("\nI guess not all of us are cut from caffeine and masochism..\n")
                 else:
                     print("\nTHAT'S more like it!\n")
-                    time.sleep(2)
+                    time.sleep(1.2)
                     check_in()
             else:
-                time.sleep(3)
+                time.sleep(1.2)
                 check_in()
 
     def breath():
