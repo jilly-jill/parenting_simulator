@@ -10,39 +10,40 @@ def main():
             time.sleep(delay)
 
     def opening():
-        opening_lines = [f"\n'There's nothing more contagious than the laughter of young children... \n   " +
-                  "It doesn't even have to matter what they're laughing about....'\n" +
-                         "        ~ Crissi Jami\n"]
+        opening_lines = [f"\n'There's nothing more contagious than the laughter of young children..." +
+                         "\nIt doesn't even have to matter what they're laughing about....'" +
+                         "\n      - Crissi Jami\n"]
         for word in opening_lines:
             print_style(word + " ")
 
-        lines = ["\n\nKids are AMAZING\n" +
+        lines = ["\nKids are AMAZING\n" +
                  "Amazing BUT exhausting...\n" +
                  "Not a parent? caretaker? guardian?...\n" +
                  "Come experience a slice of overload...\n\n"]
         for text in lines:
             print_style(text + " ")
 
-        time.sleep(1)
+        time.sleep(.5)
         start = input("\nAre you ready to experience the fun? Y or N\n>> ").upper()
         if start.__contains__("Y") or start.__contains__("N"):
             if start == "N":
-                punked_out = input("\nIt's okay to admit you can't handle it..\nAre you REALLY sure?\nY or N\n>> ").upper()
+                punked_out = input("\nIt's okay to admit you can't handle it..\n" +
+                "Are you REALLY sure? Y or N\n>> ").upper()
                 if punked_out == 'Y':
                     print("\nI guess not all of us are cut from caffeine and masochism..\n")
                 else:
                     print("\nTHAT'S more like it!\n")
-                    time.sleep(1.2)
+                    time.sleep(1.25)
                     check_in()
             else:
-                time.sleep(1.2)
+                time.sleep(1.25)
                 check_in()
 
     def breath():
         time.sleep(0.25)
 
     def check_in():
-        print('On a scale from 1 to 10, with 1 being less and 10 being more:\n')
+        print('\nOn a scale from 1 to 10, with 1 being less and 10 being more:')
         check = input('How overstimulated are you?\n>> ')
         name = input('What does the kiddo call you?\n>> ').capitalize()
         overstimulated = int(check)
@@ -71,15 +72,13 @@ def main():
             print(f"\n{name} I LOVE YOU\n".upper())
             break
 
-        again = input("\n\nWould you like to try that again? Y or N\n>> ")
-        for word in again:
-            print_style(word + " ")
+        again = input("\n\nWould you like to try that again? Y or N\n>> ").upper()
         if again.__contains__("Y"):
             check_in()
         elif again.__contains__("N"):
             print('I guess not all of us are cut from caffeine and masochism..')
         else:
-            print_style(word + " ")
+            again
 
     opening()
 
